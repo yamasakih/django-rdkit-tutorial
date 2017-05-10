@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Image</title>
+</head>
+<body>
+{% for compound in compounds %}
+    ID:{{ compound.id }}<br>
+    NAME:{{ compound.name }}<br>
+    SMILES: {{ compound.get_smiles }}<br>
+    {{ compound.get_image | safe }}<br>
+{%  endfor %}
+</body>
+</html>

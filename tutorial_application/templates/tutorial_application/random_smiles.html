@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random SMILES</title>
+</head>
+<body>
+{% for compound in compounds %}
+    ID: {{ compound.id }}
+    NAME: {{ compound.name }}
+    SMILES: {{ compound.get_smiles }}
+    <br><br>
+{%  endfor %}
+</body>
+</html>

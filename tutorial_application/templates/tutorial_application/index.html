@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<form method="post">
+    {%  csrf_token %}
+    <center>
+        {{ form.molecule }}<br>
+        {% if error_message %}
+            {{ error_message }}<br>
+        {% endif %}
+        <input type="submit" name="submit" value="部分構造検索">
+    </center>
+</form>
+{% if compounds %}
+    {% for compound in compounds %}
+        {{ compound.get_image | safe }}
+    {% endfor %}
+{%  endif %}
+</body>
+</html>
